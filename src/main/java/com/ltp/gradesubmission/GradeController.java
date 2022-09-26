@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class GradeController {
 
     @GetMapping("/grades")
-    public String getGrades() {
+    public String getGrades(Model model) {
+        Grade grade = new Grade("Nick","Math","+A");
+        model.addAttribute("grade" , grade);
         return "grades";
     }
 }
